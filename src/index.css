@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 225 30% 6%;
+    --foreground: 210 40% 92%;
+
+    --card: 225 35% 10%;
+    --card-foreground: 210 40% 92%;
+
+    --popover: 225 35% 10%;
+    --popover-foreground: 210 40% 92%;
+
+    --primary: 185 100% 50%;
+    --primary-foreground: 225 30% 6%;
+
+    --secondary: 270 60% 55%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 225 25% 16%;
+    --muted-foreground: 215 20% 55%;
+
+    --accent: 270 60% 55%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 225 20% 18%;
+    --input: 225 20% 18%;
+    --ring: 185 100% 50%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 225 35% 8%;
+    --sidebar-foreground: 210 40% 92%;
+    --sidebar-primary: 185 100% 50%;
+    --sidebar-primary-foreground: 225 30% 6%;
+    --sidebar-accent: 225 25% 16%;
+    --sidebar-accent-foreground: 210 40% 92%;
+    --sidebar-border: 225 20% 18%;
+    --sidebar-ring: 185 100% 50%;
+
+    --neon-cyan: 185 100% 50%;
+    --neon-purple: 270 60% 55%;
+    --neon-green: 145 80% 50%;
+    --neon-orange: 30 100% 55%;
+    --neon-pink: 330 80% 55%;
+
+    --glass: 225 35% 10% / 0.6;
+    --glass-border: 225 20% 25% / 0.4;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', 'SF Pro Display', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    background: hsla(var(--glass));
+    backdrop-filter: blur(16px);
+    border: 1px solid hsla(var(--glass-border));
+  }
+
+  .neon-glow-cyan {
+    box-shadow: 0 0 15px hsla(var(--neon-cyan) / 0.3), 0 0 45px hsla(var(--neon-cyan) / 0.1);
+  }
+
+  .neon-glow-purple {
+    box-shadow: 0 0 15px hsla(var(--neon-purple) / 0.3), 0 0 45px hsla(var(--neon-purple) / 0.1);
+  }
+
+  .neon-text-cyan {
+    color: hsl(var(--neon-cyan));
+    text-shadow: 0 0 10px hsla(var(--neon-cyan) / 0.5);
+  }
+
+  .neon-text-purple {
+    color: hsl(var(--neon-purple));
+    text-shadow: 0 0 10px hsla(var(--neon-purple) / 0.5);
+  }
+
+  .cyber-grid {
+    background-image:
+      linear-gradient(hsla(var(--neon-cyan) / 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, hsla(var(--neon-cyan) / 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}
